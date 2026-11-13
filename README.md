@@ -13,7 +13,7 @@ An open, reproducible research and portfolio project exploring how multiple mark
 - Educational notes, method comparisons and practitioner-facing findings as evidence accumulates.
 
 ## Project navigation
-- [Project charter](docs/CHARTER.md) — purpose, scope, audiences and collaboration model
+- [Project charter](docs/PROJECT_CHARTER.md) — purpose, scope, audiences and collaboration model
 - [Roadmap](docs/ROADMAP.md) — milestones, exit criteria and workstreams
 - [Current status](docs/STATUS.md) — verified progress, priorities and blockers
 - [Decisions](docs/DECISIONS.md) — methodology and scope choices
