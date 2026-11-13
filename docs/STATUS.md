@@ -8,7 +8,9 @@ Last verified: 2026-11-13
 - Decision and evidence logs; experiment/model register, methods/claims ledger, publication plan, technical acceptance criteria, workflow/board instructions, issue/PR templates.
 - Recovered 2026-11-05 **V2 synthetic retailer archive** from personal file Library; verified **45/45 manifest hashes**.
 - Ran source archive `qa.py` against saved release: **PASS 40/40**, exit code 0.
-- Generated a new pilot with saved seed `62027`; QA rerun **PASS 40/40**, exactly matching archived QA report.\n- Reran full experiment-power validation: **PASS**; validation JSON exactly matches archived report (95.6% detection, 4.5% A/A false positives, 96.5% coverage; weak-effects detection 67.4%).\n- Regenerated complete 156-week release with seed `62189`; QA **PASS 40/40** and **21/21 files byte-identical** after diagnostics and geo-probe generation.
+- Generated a new pilot with saved seed `62027`; QA rerun **PASS 40/40**, exactly matching archived QA report.
+- Reran full experiment-power validation: **PASS**; validation JSON exactly matches archived report (95.6% detection, 4.5% A/A false positives, 96.5% coverage; weak-effects detection 67.4%).
+- Regenerated complete 156-week release with seed `62189`; QA **PASS 40/40** and **21/21 files byte-identical** after diagnostics and geo-probe generation.
 - Ran mechanism tests: zero-delivery sales survive, three zero-effect world comparisons match, 17/17 mini replay files hash-identical, 4/4 adversarial corruptions detected.
 - Independently checked ledger/daily/weekly revenue equality (1,089,355,666 cents), 164,196 orders, 48 markets and 24 randomized pairs.
 - Created and seeded actionable issues [#2–#10](https://github.com/rahitushar1/marketing-measurement-lab/issues), one per next technical or visibility deliverable.
