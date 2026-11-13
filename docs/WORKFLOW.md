@@ -14,7 +14,7 @@ Native GitHub Projects board status: **PENDING OWNER UI STEP**. The connected Gi
 1. GitHub profile → **Projects** → **New project** → **Board**.
 2. Enter `Marketing Measurement Lab`, create. If available, choose **Import items from repository** to import the current issues; otherwise add the repository issues afterwards.
 3. Edit the Status single-select options to the five names above. Arrange columns in workflow order.
-4. Make **Issue #1** In Progress, the V2 recovery audit issue In Progress, and planned tasks Backlog/Ready as appropriate.
+4. Make **Issue #1** In Progress, completed **Issue #2** Done, source-integration **Issue #4** Ready, and remaining planned tasks Backlog/Ready as appropriate.
 5. Save the resulting Project URL in this file and `docs/STATUS.md`, then check the board box in Issue #1.
 
 ## Issue-driven work
