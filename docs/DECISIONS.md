@@ -43,3 +43,16 @@ A **decision** is a scope or methodological commitment; an **open question** rem
 - Reason, assumptions, tradeoffs:
 - Evidence:
 - Impact on roadmap and next review:
+
+### D-005 — Reuse audited V2 as the starting candidate; do not rebuild blindly
+- **Date:** 2026-11-13
+- **Decision:** Preserve the recovered V2 generator and validation code as the *candidate* M1 foundation rather than replacing it without a documented deficiency.
+- **Evidence:** Exact archive/hash verified, fresh pilot generated and passed all 40 bundled QA checks, 17/17 deterministic mini replay matches and 4/4 adversarial checks.
+- **Limitations:** Full power-study rerun and full-release regeneration remain pending; code has not yet been publicly imported. A synthetic QA pass is not model identification.
+- **Alternatives considered:** Restart entire simulation, or trust historical descriptions alone. Both would forfeit existing verified work or evidence rigor.
+
+### D-006 — Native Projects creation requires an owner interface step
+- **Date:** 2026-11-13
+- **Decision:** Seed issues with defined acceptance gates, document the desired five-column GitHub Projects board, and leave board creation explicitly open until the owner performs and verifies the UI setup.
+- **Why:** The connected GitHub actions support issue and file writes, not user Projects creation. A documentation-only board is not a native Projects board.
+- **Evidence:** [Workflow](WORKFLOW.md) and [board setup issue](https://github.com/rahitushar1/marketing-measurement-lab/issues/3).
