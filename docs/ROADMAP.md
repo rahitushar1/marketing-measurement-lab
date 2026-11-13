@@ -55,7 +55,7 @@ Demonstrate hands-on implementation and defensible evaluation of marketing mix m
 - **Exit gate:** publicly understandable project walkthrough, reproducible results and feedback log. Never publish proprietary or private source materials.
 
 ## Immediate priorities
-1. P0: complete the recovered V2 audit (fresh 40/40 QA and pilot reproduction already verified; multi-world power and full-release replay pending).
+1. P0: integrate audited synthetic V2 source in GitHub (full power study reproduced; 21/21 full-release files byte-identical; original recovery issue #2 complete).
 2. P0: use V2 as candidate DGP; review source/assumptions and [acceptance criteria](ACCEPTANCE_CRITERIA.md) before integration.
 3. P1: owner creates native GitHub Projects board; GitHub issues and PR template now prepared.
 4. P1: choose first public educational update only after a verified substantive result.
