@@ -48,7 +48,7 @@ A **decision** is a scope or methodological commitment; an **open question** rem
 - **Date:** 2026-11-13
 - **Decision:** Preserve the recovered V2 generator and validation code as the *candidate* M1 foundation rather than replacing it without a documented deficiency.
 - **Evidence:** Exact archive/hash verified, fresh pilot generated and passed all 40 bundled QA checks, 17/17 deterministic mini replay matches and 4/4 adversarial checks.
-- **Limitations:** Full power-study rerun and full-release regeneration remain pending; code has not yet been publicly imported. A synthetic QA pass is not model identification.
+- **Limitations:** Full multi-world power study and 156-week release were independently rerun, with exactly matching validation output and 21/21 release files byte-identical. Code has not yet been publicly imported. Internal QA does not prove external realism or model identification.
 - **Alternatives considered:** Restart entire simulation, or trust historical descriptions alone. Both would forfeit existing verified work or evidence rigor.
 
 ### D-006 — Native Projects creation requires an owner interface step
