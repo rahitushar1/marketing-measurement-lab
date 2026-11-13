@@ -1,7 +1,7 @@
 # Synthetic-data V2 recovery and audit
 
 Audit date: 2026-11-13
-Status: **Recovered and partially independently validated.** Full release regeneration, full experimental-power rerun, and external scientific validation remain outstanding.
+Status: **Historical V2 generator and data reproduction verified.** Archived multi-world experimental validation and every release file reproduced exactly; external scientific realism and downstream model validation remain outstanding.
 
 ## Source artifact
 - Original archive recovered from the owner's personal ChatGPT Library: `triangulation_synthetic_v2 (1)(3).zip` (77,924,719 bytes).
@@ -28,23 +28,24 @@ Status: **Recovered and partially independently validated.** Full release regene
 | Fresh pilot read-side QA | **PASS 40/40, exit code 0**; entire QA JSON equals bundled `pilot/qa_report.json`, including row counts | `python qa.py rerun_pilot --report rerun_pilot_qa.json` |
 | Mechanism / adversarial QA | All mechanism assertions true: zero-delivery baseline, three zero-effect seeds with identical outcomes, alternative assignment seed retains prehistory, **17/17 byte-identical mini replay files**, **4/4 corrupted fixtures rejected** | `mechanism_tests(load_config(Path('config/pilot.json')))` from `validate.py` |
 | Independent revenue cross-check | `transactions` = `mmm_geo_daily` = `mmm_geo_weekly` = **1,089,355,666 cents** over **164,196 transactions** | Independent pandas sum |
-| Release geo design | **48 geos**, **24 paired normal** and **24 paired holdout**; **156 full weeks** | Independent CSV inspection |
+| Release geo design | **48 geos**, **24 paired normal** and **24 paired holdout**; **156 full weeks** | Independent CSV inspection |\n| Full multi-world power / coverage validation | **PASS, exit 0**, full newly produced `validation.json` exactly equals archived pilot report | `python validate.py rerun_pilot`; 979/1024 positive detections; 46/1024 A/A false positives; 988/1024 interval coverage; 259/384 weaker-effect detections |\n| Fresh 156-week release regeneration | **PASS, exit 0**, all **21/21 release files byte-identical**, including diagnostic images and truth-only files | `python generate.py --config config/release.json --output rerun_release`; `python qa.py rerun_release`; `python diagnostics.py rerun_release`; regenerate `geo_probe.json` with `validate.observed_geo_probe` |\n| Fresh full release QA | **PASS 40/40**, `qa_report.json` exactly equals original | `python qa.py rerun_release --report rerun_release/qa_report.json` |
 
-## Previously reported, not rerun this session
-- The bundled `pilot/validation.json` claims experimental design power **979/1024 = 95.6%**, A/A false positives **46/1024 = 4.5%**, approximate interval coverage **988/1024 = 96.5%**. A low-efficacy scenario reports **259/384 = 67.4%** detection.
-- The full `python validate.py rerun_pilot` multi-world power exercise was **not rerun**. Hence these figures remain archived validation claims, not newly reproduced performance estimates.
-- A full 156-week `generate.py` release replay was **not run**. The supplied release was independently checked; fresh pilot was regenerated.
+## Full validation reproduced this session
+- Fresh `python validate.py rerun_pilot` passed; the regenerated validation JSON was **exactly identical** to archived `pilot/validation.json`.
+- The archived power estimate was reproduced: **979/1024 = 95.6%** positive detections, **46/1024 = 4.5%** A/A false positives, **988/1024 = 96.5%** approximate t-interval coverage. Lower-efficacy sensitivity: **259/384 = 67.4%** detections.
+- Fresh 156-week `generate.py` release regenerated successfully, then QA/diagnostics/geo probe were rebuilt. **All 21/21 regenerated release files match the archived release byte-for-byte.**
+- This is reproducibility **under the currently installed pinned packages on Python 3.13.5**; original bundle specified Python 3.12.14. Cross-platform replication and real-advertiser fidelity are separate questions.
 
 ## What this does and does not establish
-**Established:** The exact recovered archive is internally intact; the original QA implementation reruns successfully; a seeded fresh pilot reproduces the original QA report; mechanism and adversarial checks behave as expected; observed revenue aggregates reconcile.
+**Established:** The recovered archive has integrity-verified files; original QA and mechanism gates rerun; seeded pilot validation exactly reproduces; all **21/21** full-release outputs reproduce byte-for-byte; independent revenue cross-checks reconcile.
 
-**Not established:** real retailer realism/calibration; identification of every channel effect by a practical MMM or MTA model; cross-geo interference robustness; full independent power-study replication; production deployment or actual holdout experiment; performance in non-synthetic datasets.
+**Not established:** real retailer realism/calibration; identification of every channel effect by a practical MMM or MTA model; cross-geo interference robustness; production deployment or actual holdout experiment; performance in non-synthetic datasets.
 
 **Important:** V2 is a valuable existing baseline. **Do not restart the generator from scratch** without a documented deficiency. M1 should review and integrate this verified candidate with source code and tests, then assess necessary model-specific extensions.
 
 ## Next audit actions
 1. Import the audited V2 source files, docs and small sample/config into GitHub using a reviewable branch/PR. Preserve the archive SHA, package version and simulation-truth separation; do not commit large generated CSVs or personal library links.
-2. Rerun the complete `validate.py` power/coverage exercise and, if feasible, fresh full-release regeneration with byte-level or value-level comparison. Save logs and environment.
+2. Preserve the 2026-11-13 rerun logs, hashes, and report bundle; ensure new source-import CI covers a smaller deterministic subset.
 3. Review design assumptions and possible endogeneity/identifiability concerns with meaningful model recovery tests. Separate data integrity from scientific validation.
 4. Draft release/licensing/privacy/data-size policy before a public source import.
 
@@ -52,4 +53,4 @@ Status: **Recovered and partially independently validated.** Full release regene
 - Use the exact V2 configuration and pinned dependencies; original bundle specifies Python 3.12.14.
 - Set seeds: pilot `62027`/`62028`; release `62189`/`62190`.
 - Keep `truth_only` out of analyst-facing outputs and benchmark/model development until scoring.
-- Scripts: `python qa.py release`; `python generate.py --config config/pilot.json --output rerun_pilot`; `python qa.py rerun_pilot`; `python validate.py rerun_pilot`.
+- Scripts: `python qa.py release`; `python generate.py --config config/pilot.json --output rerun_pilot`; `python qa.py rerun_pilot`; `python validate.py rerun_pilot`; `python generate.py --config config/release.json --output rerun_release`; `python qa.py rerun_release`; `python diagnostics.py rerun_release`.
