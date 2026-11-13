@@ -7,8 +7,8 @@ This register links claims to artifacts that can independently support them. A s
 | ID | Claim / deliverable | Evidence | Verification status |
 |---|---|---|---|
 | E-001 | Public repository, README and collaboration instructions exist | GitHub repository and main-branch file history | Verified repository foundation only |
-| E-002 | Previous synthetic DGP generator works | No recovered code or run output currently in this repository | **Not verified** |
-| E-003 | Previous synthetic QA suite passes | No recovered tests or test logs currently in this repository | **Not verified** |
+| E-002 | Historical synthetic generator can run | Recovered V2 archive, fresh pilot generation; see E-005/E-007 | **Pilot execution verified; full release rerun pending** |
+| E-003 | Historical V2 QA suite runs and passes its defined rules | New release/pilot QA runs; see E-006/E-008 | **40/40 each verified; broader scientific validation outstanding** |
 | E-004 | MMM/MTA/experiment pipelines run | No implementation in repository yet | **Not verified** |
 
 ## Required evidence for technical completion
