@@ -55,9 +55,9 @@ Demonstrate hands-on implementation and defensible evaluation of marketing mix m
 - **Exit gate:** publicly understandable project walkthrough, reproducible results and feedback log. Never publish proprietary or private source materials.
 
 ## Immediate priorities
-1. P0: locate and audit prior synthetic-data generator and QA artifacts.
-2. P0: finalize minimum viable DGP specification, scope and acceptance tests.
-3. P1: set up issue board and a repeatable branch/PR/review workflow.
+1. P0: complete the recovered V2 audit (fresh 40/40 QA and pilot reproduction already verified; multi-world power and full-release replay pending).
+2. P0: use V2 as candidate DGP; review source/assumptions and [acceptance criteria](ACCEPTANCE_CRITERIA.md) before integration.
+3. P1: owner creates native GitHub Projects board; GitHub issues and PR template now prepared.
 4. P1: choose first public educational update only after a verified substantive result.
 
 ## Scope and rigor guards
