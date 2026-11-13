@@ -7,7 +7,7 @@ This register links claims to artifacts that can independently support them. A s
 | ID | Claim / deliverable | Evidence | Verification status |
 |---|---|---|---|
 | E-001 | Public repository, README and collaboration instructions exist | GitHub repository and main-branch file history | Verified repository foundation only |
-| E-002 | Historical synthetic generator can run | Recovered V2 archive, fresh pilot generation; see E-005/E-007 | **Pilot execution verified; full release rerun pending** |
+| E-002 | Historical synthetic generator can run | Recovered V2 archive, fresh pilot generation; see E-005/E-007 | **Pilot and complete release regeneration verified; 21/21 files identical** |
 | E-003 | Historical V2 QA suite runs and passes its defined rules | New release/pilot QA runs; see E-006/E-008 | **40/40 each verified; broader scientific validation outstanding** |
 | E-004 | MMM/MTA/experiment pipelines run | No implementation in repository yet | **Not verified** |
 
@@ -26,10 +26,17 @@ When new evidence is obtained, update this table and `docs/STATUS.md`. Keep unsu
 |---|---|---|---|
 | E-005 | Recovered V2 archive and independently inspected `MANIFEST.json` | **45/45** file hashes and lengths match; archive SHA `e1326894d9a2987055f7bf7cbf1b4843cbb5c4aa46f909ff2650f483d622f70c` | Archive not yet committed publicly |
 | E-006 | Ran original `qa.py release` | Exit 0, **40/40** passing, zero failed checks | Internal QA rules, not all scientific threats |
-| E-007 | Generated pilot afresh and ran `qa.py rerun_pilot` | Exit 0, **40/40**, report exactly equals archived pilot QA JSON | Full release regeneration and full power rerun pending |
+| E-007 | Generated pilot afresh and ran `qa.py rerun_pilot` | Exit 0, **40/40**, report exactly equals archived pilot QA JSON | Both now independently reproduced; external scientific validation remains |
 | E-008 | Ran original `mechanism_tests` | **17/17** deterministic files equal, **4/4** adversarial corruptions rejected, null-effect tests true for three seeds | Does not prove external fidelity |
 | E-009 | Independently summed release ledger, daily and weekly MMM tables | All three revenue aggregates **1,089,355,666 cents**; 164,196 orders, 48 geos, 24 pairs | Model estimation not performed |
 
 Full commands, environment and detailed qualifications: [Synthetic V2 audit](SYNTHETIC_V2_AUDIT.md).
 
-**Status correction to initial E-002/E-003:** The earlier table described the pre-recovery state. As of 2026-11-13, the generator has been recovered and fresh pilot execution verified; the released QA script has been rerun successfully. The complete multi-world power study remains unrerun, and no MMM/MTA fit has been verified.
+**Status correction to initial E-002/E-003:** The earlier table described the pre-recovery state. As of 2026-11-13, the generator has been recovered and fresh pilot execution verified; the released QA script has been rerun successfully. The complete multi-world power study and release regeneration have now been rerun; no MMM/MTA fit has been verified.
+
+
+## E-010 and E-011 — Full reproducibility closeout
+| ID | Execution | Observed evidence | Limits |
+|---|---|---|---|
+| E-010 | Re-ran entire `python validate.py rerun_pilot` multi-world power/coverage study | **PASS**; new `validation.json` exactly equals archived report: 979/1024 positive detections, 46/1024 A/A false positives, 988/1024 interval coverage; weaker-effect 259/384 detections | Conditional on synthetic world, randomized assignments within repeated worlds and no-interference assumptions |
+| E-011 | Regenerated full 156-week release from seed 62189 and rebuilt QA/diagnostics/geo probe | **21/21 files byte-identical** to archived release; fresh QA **PASS 40/40** | Exact results in audited environment (Python 3.13.5 with pinned packages); code not yet imported to public repository |
