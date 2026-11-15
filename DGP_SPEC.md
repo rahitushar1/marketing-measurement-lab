@@ -1,0 +1,34 @@
+# Causal specification
+
+This dataset simulates one US direct-to-consumer replenishment retailer across fictional markets. The paid channels are search, social and display. All event times use UTC. All revenue and realized spend use integer USD cents. The parameter file is the source of truth for tunable coefficients. The registry records their rationale and sensitivity ranges.
+
+## Sequence within a day
+
+1. **Demand.** Market size and baseline propensity vary. A subset of the fixed audience pool enters over the first 420 days. National and market demand shocks persist over time. Seasonality, promotions, prices and competing demand affect purchase probabilities. The independent organic query process uses latent intent and market demand before paid delivery, so it can confound paid search and sales. The query count is an observed control. Individual intent and true market demand remain hidden.
+2. **Planning.** Each market and channel has a media pressure, a relative delivery setting. It responds to the expected demand signal, scheduled promotions, the previous day's trailing revenue and independent campaign flights. The planner never sees current or future orders. The experiment freezes each market's lagged-sales planning input from the start of the pulse through follow-up. Other scheduled inputs continue to vary. Market plans and delivery draws are independent across markets conditional on shared national conditions.
+3. **Delivery.** A search opportunity requires a pre-bid query. Social serves broader prospects and display favors previous organic browsing. Each eligible person has at most two impressions per channel per day. If `x` is the pressure and `r` is the intent- and audience-specific rate, first-slot probability is `1 - exp(-r*x)`. The second slot requires the first and has a separate probability. Clicks follow impressions, with a channel-specific probability affected by intent. Platforms bill search per click and social/display per impression. Spend is the billed event count times that cell's unit price, rounded to cents. Every billed event comes from the same modeled audience.
+4. **Response.** Each eligible person has one possible order time. Earlier same-day impressions and clicks add to decayed past media memory. A later touch enters the next day's memory. Channel response is `weight * memory / (half_saturation + memory)`, with a different response weight for customers who have never ordered. The sum enters the purchase logit with affinity, latent intent, promotions, list price, competition and demand. Recent buyers have a reduced purchase probability during replenishment windows. Checkout amount includes persistent customer basket variation, order noise and the current discount. Every purchase enters the same financial ledger.
+5. **Observation.** An independent logging stream gates visibility by consent, channel-specific impression capture, click capture and order capture. A subset of consenting IDs rotates every 49 days with individual offsets. There is no analyst crosswalk to underlying people. Click-only rows can occur when the impression was unobserved. The financial ledger retains all purchases and omits the stable private person identifier.
+
+Paid clicks contribute through the same scaled response equation as impressions. Organic browsing and queries never depend on paid clicks. Disabling paid response leaves order outcomes exactly invariant to paid exposure under paired replay. Purchase history can carry an effect forward through replenishment and the new-to-brand state, so realized incremental outcomes can vary by day and are not an additive attribution ledger.
+
+## Counterfactual contracts
+
+| Contrast | Population and window | Mechanism and denominator |
+|---|---|---|
+| One channel off | All markets, first published week through the day before experiment start | Set that channel's pressure to zero. Preserve the warmup, other channel schedules and all exogenous draws. Compare reference minus off. Spend denominator is the removed channel's realized spend. |
+| One channel at +20% pressure | Same historical population and window | Multiply one channel's pressure by 1.20. Compare higher pressure minus reference. Use realized billed spend difference, which can be less than 20% because delivery saturates and billing is stochastic. |
+| All paid off | Same historical population and window | Set all three pressures to zero. Denominator sums removed spend across the three channels. Joint effects and individual removal effects are distinct because purchase probability and history interact. |
+| Social normal versus holdout | All markets during the 14-week pulse plus two weeks of sales follow-up | Compare normal social to a temporary complete holdout. All markets resume normal delivery in follow-up. Denominator is social spend difference during the pulse. Search and display delivery and spend remain identical in both worlds. |
+
+The first 56 days run as hidden warmup. Every replay keeps this history and uses common daily exogenous draws. Historical outcomes therefore retain early carryover from pre-window advertising. Sales feedback stays frozen to the realized scheduling path when evaluating these scenarios. These are fixed-policy finite contrasts. A long-run budget reallocation with changed planning behavior is a different question.
+
+## Geo experiment
+
+Market sizes are sorted and grouped in adjacent blocks of up to four. Within a block, the simulator chooses pairs using population, prior 16-week revenue per person, and the early-to-late change within that baseline. A separate seed flips a fair coin within each pair. It uses only outcomes available before assignment. The live dataset contains one observed arm per geo. The reference truth contains both potential outcomes per geo for the pre-period, pulse and follow-up. Market interference, shared auction displacement and geo migration are excluded by design.
+
+Use paired contrasts with the pre-period adjustment described in the exercise guide. The sum of paired differences targets half the all-market incremental revenue, since each pair contributes one normal and one holdout market. For iROAS, align the numerator and denominator at either the half-market or all-market scale. Sign-flip inference tests a sharp zero effect. The paired t interval is an approximation for the average effect.
+
+## Scope
+
+The audience is a fictional addressable cohort, with latent entry and no modeled exits or geolocation errors. The calendar, anonymous identities, tracking loss and auction price variation simplify actual platform behavior. The simulator assumes no auction interference and a controllable social shutoff. It contains no costs of goods, returns, inventory or margin model. All causal outcomes are known only inside this simulation. A single geo test identifies its own social contrast and window. Other channel effects come from simulator replay.
