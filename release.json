@@ -1,0 +1,15 @@
+{
+  "seed": 62189,
+  "assignment_seed": 62190,
+  "geos": 48,
+  "mean_people": 600,
+  "start_date": "2023-01-02",
+  "weeks": 156,
+  "warmup_days": 56,
+  "experiment_start_week": 128,
+  "intervention_weeks": 14,
+  "followup_weeks": 2,
+  "adjustment_weeks": 16,
+  "effect_scale": 1.0,
+  "delivery_scale": 1.0
+}
