@@ -32,7 +32,7 @@ Demonstrate hands-on implementation and defensible evaluation of marketing mix m
 
 ### M3 — MMM case study — IN PROGRESS
 - **Progress (Nov 22, 2026):** Exploratory Google Meridian fit and regression benchmark executed; public-input saved-posterior restoration and three HTML reports verified in clean Colab. New immutable Git input-reference revision and independent full refit still need separate verification. Rank-normalized convergence R-hat max ≈ 1.3781 and simulator-truth validation remain unresolved; no causal budget conclusion.
-- [Case study](MMM_CASE_STUDY.md) · [reproduction instructions](M3_FAST_REPRODUCIBILITY.md) · [draft PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12)
+- [Case study](MMM_CASE_STUDY.md) · [reproduction instructions](M3_FAST_REPRODUCIBILITY.md) · [merged PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12)
 - Fit baseline and industry-relevant MMM approaches (tool choice to be decided after data requirements).
 - Teach adstock, saturation, identification, priors/regularization, uncertainty and calibration.
 - **Exit gate:** reproducible fits, diagnostics, holdout checks, counterfactual estimates, decision memo and limitations.
@@ -57,7 +57,7 @@ Demonstrate hands-on implementation and defensible evaluation of marketing mix m
 - **Exit gate:** publicly understandable project walkthrough, reproducible results and feedback log. Never publish proprietary or private source materials.
 
 ## Immediate priorities
-0. P0: complete review and publication of [M3 exploratory MMM PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12), keeping scientific acceptance checks open.
+0. M3 exploratory MMM published to `main` in [merged PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12); maintain outstanding convergence, independent refit and causal-truth comparison in [Issue #6](https://github.com/rahitushar1/marketing-measurement-lab/issues/6).
 1. P0: integrate audited synthetic V2 source in GitHub (full power study reproduced; 21/21 full-release files byte-identical; original recovery issue #2 complete).
 2. P0: use V2 as candidate DGP; review source/assumptions and [acceptance criteria](ACCEPTANCE_CRITERIA.md) before integration.
 3. P1: owner creates native GitHub Projects board; GitHub issues and PR template now prepared.
