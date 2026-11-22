@@ -1,6 +1,6 @@
 # M3 Meridian MMM — fast reproducibility
 
-**Status (2026-11-22): successful clean Colab execution using public GitHub assets from review branch.** All three HTML reports were generated, with 12/12 code cells producing outputs and zero recorded errors. The project owner reports a successful final Colab run after the input URL was pinned to the immutable commit; a separate downloaded notebook showing this post-pin execution has not been archived. Independent full Bayesian refitting has not been verified.
+**Status (2026-11-22): successful clean Colab execution using public GitHub assets; exploratory M3 artifacts merged into main via PR #12.** All three HTML reports were generated, with 12/12 code cells producing outputs and zero recorded errors. The project owner reports a successful final Colab run after the input URL was pinned to the immutable commit; a separate downloaded notebook showing this post-pin execution has not been archived. Independent full Bayesian refitting has not been verified.
 
 ## Goal
 Reproduce the **existing** Google Meridian synthetic-retailer MMM reports and inspect the model's Bayesian posterior and caveats, using only public repository files. No private Google Drive, laptop uploads, or personal Google authentication to access input files.
@@ -14,7 +14,7 @@ Reproduce the **existing** Google Meridian synthetic-retailer MMM reports and in
 - `notebooks/02_Meridian_MMM_Portable.ipynb` — portable notebook with saved successful public-input execution outputs; pinned-reference revision reported runnable by the project owner; separately archived outputs for that version pending.
 - `reports/mmm/` — three separately verified original HTML reports, clearly labeled original executions, not outputs from the yet-untested portable notebook.
 
-These assets are present on the review branch `m3-mmm-public-reproduction` in draft PR #12. The notebook has a pinned `REPO_REF` to the immutable artifact-containing commit `5da3b61c19aeef8a722cc49eb617064ade990507`. The changes are **not on `main`** until the PR is approved and merged.
+These assets were merged into `main` via [PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12) on 2026-11-22 (merge commit `f31df3e74dbb3dc96099373175364224a6531331`). The notebook uses the immutable input commit `5da3b61c19aeef8a722cc49eb617064ade990507`.
 
 ## Reader instructions — after these files are published
 
@@ -38,9 +38,9 @@ The notebook includes an explicitly opt-in `RUN_FULL_REFIT = True` block. It is 
 - The fixed $396,900 budget optimizer projects ~$68,228 additional *modeled* incremental revenue under ±30% channel spending constraints; this is a scenario, not a demonstrated lift.
 - The simulator's `truth_only` data are **not in these files**; MTA, geo-experiment and triangulation are separate workstreams.
 
-## What is still required before we mark M3 published/reproducible?
+## Remaining work for full M3 scientific acceptance
 
-- User approves final documentation edits and merging the draft PR into `main`.
-- Review branch files and PR #12 exist. A clean Colab run using public assets completed successfully; the owner reports the subsequent immutable-input-ref run also completed. Preserve the distinction from the earlier saved notebook output provenance.
-- Record execution evidence, data checks, hashes, expected numerical outputs and limitations; update README, `docs/STATUS.md`, `docs/EVIDENCE.md`, `docs/EXPERIMENT_REGISTER.md`, and issue #6, without claiming closed M3 acceptance criteria.
+- **Public exploratory case study published:** PR #12 merged into `main`; no additional publication approval needed for that merge.
+- A clean Colab run using public assets completed successfully; the owner reports the subsequent immutable-input-ref run also completed. Preserve the distinction from the earlier saved notebook output provenance.
+- Maintain the execution evidence, checksums, outputs and limitations already linked in the repository; optionally archive a fresh executed notebook from the post-pin run. Keep [M3 Issue #6](https://github.com/rahitushar1/marketing-measurement-lab/issues/6) open until scientific acceptance criteria are met.
 - Verify the full-refit branch later if independent sampling is desired.
