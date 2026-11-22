@@ -4,7 +4,18 @@
 
 An open, reproducible research and portfolio project exploring how multiple marketing measurement methods can be implemented, validated, compared and used for business decisions.
 
-> **Current status:** M0 foundation and recovery audit. Recovered synthetic V2 has independently reproduced its 40-check QA, full geo-design validation and **21/21 original release files byte-for-byte**. Its source is **not yet committed here**, and no MMM/MTA model has been fitted.
+**Current status (November 22, 2026):** Exploratory Google Meridian MMM executed and independently reproduced using public inputs and a saved posterior. Full model refitting, convergence remediation, and causal-truth validation remain pending.
+
+## M3 — Google Meridian marketing mix modeling (exploratory; fast reproduction verified)
+
+This synthetic DTC retailer case study models **48 markets × 120 pre-experiment weeks** (5,760 geo-weeks), Search, Social and Display, in **Google Meridian 2.2.0**. The notebook restores a saved Bayesian posterior of **2 chains × 1,000 draws**, then regenerates Google's model results, model-health and fixed-budget optimization reports from publicly downloadable, checksum-verified assets. A fresh Colab run using the public review branch completed successfully on November 22, 2026. An independent **full Bayesian refit** is not yet verified.
+
+- [Read the MMM case study](docs/MMM_CASE_STUDY.md)
+- [Open the portable notebook](notebooks/02_Meridian_MMM_Portable.ipynb)
+- [Reproduction instructions](docs/M3_FAST_REPRODUCIBILITY.md)
+- [Results report](reports/mmm/MMM_Meridian_Model_Results.html) · [Health report](reports/mmm/MMM_Meridian_Model_Health.html) · [Optimization report](reports/mmm/MMM_Meridian_Budget_Optimization.html)
+
+**Headline:** Meridian estimates Social mean modeled ROI at **6.43×** and suggests reallocating a historical **$396,900** fixed budget toward Social. Under default ±30% channel constraints, the modeled scenario estimates **+$68,228 (+3.74%) incremental revenue**. These are **simulated observational model estimates**, not experimentally verified lift. Independent strict convergence diagnostics show maximum rank-normalized R-hat ≈ **1.378**, so parameter inference and optimization remain provisional. MTA, geo incrementality, truth comparison and triangulation are separate upcoming milestones.
 
 ## What the lab will deliver
 - A unified, documented **synthetic causal data-generating process**, including observable marketing data and separately stored simulation ground truth.

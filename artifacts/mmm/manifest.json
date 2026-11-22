@@ -1,0 +1,46 @@
+{
+  "description": "Public fast-reproduction assets for synthetic retailer Meridian MMM (M3)",
+  "publication_state": "candidate, not yet on GitHub, independent reader-style run pending",
+  "software": "google-meridian==2.2.0",
+  "data_release": "synthetic V2, first 120 pre-experiment weeks, 48 geos",
+  "weekly_csv": {
+    "repo_path": "mmm_geo_weekly.csv",
+    "git_blob_sha1": "7df07a92573810b2c61c43e563102153f55bb14c"
+  },
+  "assets": {
+    "data/mmm/geos.csv": {
+      "sha256": "b0eba8a59d26995ad9ad7262d5bcbfe6560f607461720634619d42250b4990e9",
+      "bytes": 352
+    },
+    "artifacts/mmm/MMM_Meridian_Exploratory.nc": {
+      "sha256": "c4419cc22c5f0e3a708cbdbdd684a239873793f7fd3c008f407af81d5e67bbd8",
+      "bytes": 12576270
+    },
+    "reports/mmm/MMM_Meridian_Model_Results.html": {
+      "sha256": "5fd1447eb6be4f98f6c12d4874524cd8ca9c079cfb0cfaf0db92c23fd2c53327",
+      "bytes": 436298
+    },
+    "reports/mmm/MMM_Meridian_Model_Health.html": {
+      "sha256": "b50f4805cbea96dbe6e3661bfb4af1bee6003cabb8c51379bf4ca19023fa9fb4",
+      "bytes": 302441
+    },
+    "reports/mmm/MMM_Meridian_Budget_Optimization.html": {
+      "sha256": "011b5477a6fc0098d388d8be74780b9a880ff48ca75e6f1167cf8dc6f5cc46ae",
+      "bytes": 266730
+    }
+  },
+  "posterior": {
+    "chains": 2,
+    "retained_draws_per_chain": 1000,
+    "channels": [
+      "search",
+      "social",
+      "display"
+    ]
+  },
+  "known_diagnostics": {
+    "max_rank_rhat": 1.3781,
+    "roi_m_max_rank_rhat": 1.0218
+  },
+  "truth_only_data_included": false
+}
