@@ -1,6 +1,6 @@
 # M3 Meridian MMM — fast reproducibility
 
-**Status: pre-publication candidate.** The notebook has been statically validated and the saved posterior has been inspected, but the portable GitHub-download pathway **has not yet been run from a clean Colab session**. Do not claim it works until that reader-style test passes.
+**Status (2026-11-22): successful clean Colab execution using public GitHub assets from review branch.** All three HTML reports were generated, with 12/12 code cells producing outputs and zero recorded errors. The subsequent change from branch name to immutable commit SHA requires a brief fresh run to confirm the final URL change. Independent full Bayesian refitting has not been verified.
 
 ## Goal
 Reproduce the **existing** Google Meridian synthetic-retailer MMM reports and inspect the model's Bayesian posterior and caveats, using only public repository files. No private Google Drive, laptop uploads, or personal Google authentication to access input files.
@@ -11,10 +11,10 @@ Reproduce the **existing** Google Meridian synthetic-retailer MMM reports and in
 - `data/mmm/geos.csv` — 48 geographical populations (SHA-256 `b0eba8a59d26995ad9ad7262d5bcbfe6560f607461720634619d42250b4990e9`).
 - `artifacts/mmm/MMM_Meridian_Exploratory.nc` — saved prior, posterior and sampling diagnostics, 12,576,270 bytes (SHA-256 `c4419cc22c5f0e3a708cbdbdd684a239873793f7fd3c008f407af81d5e67bbd8`).
 - `artifacts/mmm/manifest.json` — checksums and scope.
-- `notebooks/02_Meridian_MMM_Portable.ipynb` — portable notebook with fast restoration (new, **not yet executed**).
+- `notebooks/02_Meridian_MMM_Portable.ipynb` — portable notebook with saved successful public-input execution outputs; pinned-reference revision still awaiting a quick check.
 - `reports/mmm/` — three separately verified original HTML reports, clearly labeled original executions, not outputs from the yet-untested portable notebook.
 
-These files are prepared under the supplied candidate folder. They **have not been pushed** to GitHub.
+These assets are present on the review branch `m3-mmm-public-reproduction` in draft PR #12. The notebook has a pinned `REPO_REF` to the immutable artifact-containing commit `5da3b61c19aeef8a722cc49eb617064ade990507`. The changes are **not on `main`** until the PR is approved and merged.
 
 ## Reader instructions — after these files are published
 
@@ -23,7 +23,7 @@ These files are prepared under the supplied candidate folder. They **have not be
 3. Locate the generated HTML reports at `/content/mmm_public_outputs/` in the Colab Files sidebar; check that Step 12 prints `PASS` three times.
 4. Read the R-hat cell and model limitations. The exploratory budget recommendation is not decision-grade evidence.
 
-**Important:** The `main` URLs will not work until the assets are actually published there. For an immutable release, replace `REPO_REF='main'` with the commit SHA after a final approved commit, rerun to verify, and update these instructions. SHA-256 and Git blob checksums already guard against changed content.
+**Important:** Input data URLs use `REPO_REF = "5da3b61c19aeef8a722cc49eb617064ade990507"`, an immutable existing Git commit containing all inputs. GitHub commit SHA plus SHA-256 / Git blob checksums protects against mutable branch contents. A fresh quick check after the pinned-ref change remains to be done.
 
 ## Full independent refit
 
@@ -40,7 +40,7 @@ The notebook includes an explicitly opt-in `RUN_FULL_REFIT = True` block. It is 
 
 ## What is still required before we mark M3 published/reproducible?
 
-- User reviews and approves file changes and public posterior release.
-- Publish files to a review branch (not main) / open a pull request. While testing that branch, change `REPO_REF = "main"` in Step 2 to the review branch name; run a clean Colab session with no Drive mount or manual files. After merge, change the ref to `main` (or ideally to the immutable final commit SHA) and repeat the quick test.
+- User approves final documentation edits and merging the draft PR into `main`.
+- Review branch files and PR #12 exist. A clean Colab run using the review branch completed successfully; repeat the quick input/report check with the updated immutable input reference before merge or immediately after.
 - Record execution evidence, data checks, hashes, expected numerical outputs and limitations; update README, `docs/STATUS.md`, `docs/EVIDENCE.md`, `docs/EXPERIMENT_REGISTER.md`, and issue #6, without claiming closed M3 acceptance criteria.
 - Verify the full-refit branch later if independent sampling is desired.
