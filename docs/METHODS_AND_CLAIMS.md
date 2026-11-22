@@ -30,7 +30,7 @@ Updated: 2026-11-22. Do not conflate a pass in generator QA with reliable causal
 
 | Claim | Evidence | Interpretation / limitation | Publishable? |
 |---|---|---|---|
-| Public-input Meridian fast restoration completes | [PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12): executed Colab notebook with checksummed GitHub assets, restored NetCDF posterior, generated 3 HTML reports, 12/12 output-bearing code cells and zero recorded errors | Saved **posterior restoration**, not independent model fitting; post-test input-commit pin still requires fresh execution confirmation | **Yes, with limitation** |
+| Public-input Meridian fast restoration completes | [PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12): executed Colab notebook with checksummed GitHub assets, restored NetCDF posterior, generated 3 HTML reports, 12/12 output-bearing code cells and zero recorded errors | Saved **posterior restoration**, not independent model fitting; owner reports post-pin Colab execution; saved notebook outputs were captured before that one-line URL change | **Yes, with limitation** |
 | Social has posterior **mean modeled ROI ≈ 6.43×** | [Original Meridian results](../reports/mmm/MMM_Meridian_Model_Results.html) | Exploratory observational Bayesian estimate, **not verified causal lift**; convergence R-hat max ≈ 1.3781 | **Yes, with caution** |
 | Fixed-budget scenario estimates **+$68,228 (+3.74%) modeled incremental revenue** | [Original optimizer report](../reports/mmm/MMM_Meridian_Budget_Optimization.html) | $396,900 historical budget, library **default ±30%** channel constraints (not user-specified); not realized or experimentally verified lift | **Yes, as scenario** |
 
