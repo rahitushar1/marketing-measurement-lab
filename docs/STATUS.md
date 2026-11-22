@@ -4,10 +4,10 @@ Last verified: 2026-11-22
 **Portfolio technical focus:** M3 exploratory MMM publicly reproducible by saved-posterior restoration; M3 scientific acceptance remains **IN PROGRESS**.
 **Foundation track:** M0 continues in progress; native Projects board and V2 source integration are not complete.
 
-## 2026-11-22 — M3 MMM publication review update
+## 2026-11-22 — M3 exploratory MMM published to main
 
 - **Executed:** A regression benchmark and Google Meridian 2.2.0 exploratory MMM were run in Colab on 48 simulated markets × 120 pre-experiment weeks (5,760 geo-weeks), using Search, Social and Display. Two MCMC chains × 1,000 posterior draws were saved in NetCDF.
-- **Verified fast reproduction:** A clean Colab run fetched checksummed **public GitHub inputs**, restored the saved posterior without resampling, and regenerated the three Google Meridian HTML reports. All 12 code cells contained outputs and no execution errors were recorded. Evidence: [draft PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12), [portable notebook](../notebooks/02_Meridian_MMM_Portable.ipynb), and [M3 reproduction guide](M3_FAST_REPRODUCIBILITY.md).
+- **Verified fast reproduction:** A clean Colab run fetched checksummed **public GitHub inputs**, restored the saved posterior without resampling, and regenerated the three Google Meridian HTML reports. All 12 code cells contained outputs and no execution errors were recorded. Evidence: [merged PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12), [portable notebook](../notebooks/02_Meridian_MMM_Portable.ipynb), and [M3 reproduction guide](M3_FAST_REPRODUCIBILITY.md).
 - **After-run change:** The notebook's input reference was pinned from a mutable branch name to immutable GitHub commit `5da3b61c19aeef8a722cc49eb617064ade990507`; hashes and the same input asset blobs can be checked independently, but **the owner reports a subsequent successful Colab run with the pinned URL; no separate post-pin executed notebook has been archived**.
 - **Findings (exploratory):** National test R² ≈ 0.8803, test wMAPE ≈ 6.14%; Social mean modeled ROI ≈ 6.43×. The $396,900 historical fixed-budget scenario projects +$68,228 (+3.74%) modeled incremental revenue under Meridian's original default ±30% channel constraints.
 - **Scientific blockers:** Strict rank-normalized R-hat reaches ≈ 1.3781; full independent Bayesian refit, aligned synthetic counterfactual-truth comparison, and causal calibration are not complete. Prediction quality or official health score does **not** establish true channel incrementality. No simulated model output should be described as a live campaign result.
@@ -48,7 +48,7 @@ Last verified: 2026-11-22
 | M7 Publication + practitioner feedback | **In progress** | Merge reviewed M3 case study; publish evidence-based outreach; gather feedback |
 
 ## Priority queue
-0. **P0 MMM:** review and merge [draft M3 PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12) after documentation and input-ref QA; retain scientific issues in [#6](https://github.com/rahitushar1/marketing-measurement-lab/issues/6).
+0. **M3 published exploratory case study:** [PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12) merged to `main` on 2026-11-22 (merge commit `f31df3e74dbb3dc96099373175364224a6531331`). Continue scientific follow-up in [Issue #6](https://github.com/rahitushar1/marketing-measurement-lab/issues/6): posterior mixing, independent refit, synthetic ground truth comparison.
 1. **P0 Technical:** prepare reviewed [M1 V2 source import #4](https://github.com/rahitushar1/marketing-measurement-lab/issues/4); historical reproduction verified, do not rebuild blindly.
 2. **P1 Project management:** owner creates [native Projects board #3](https://github.com/rahitushar1/marketing-measurement-lab/issues/3); link verified board URL and import issues.
 3. **P1 Technical:** establish [M2 independent QA/CI #5](https://github.com/rahitushar1/marketing-measurement-lab/issues/5) after source import.
