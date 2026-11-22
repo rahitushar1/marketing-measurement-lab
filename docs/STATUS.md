@@ -1,7 +1,20 @@
 # Marketing Measurement Lab — Project Status
 
-Last verified: 2026-11-13
-**Current milestone:** M0 — Foundation and existing-work recovery. **Status: IN PROGRESS.**
+Last verified: 2026-11-22
+**Portfolio technical focus:** M3 exploratory MMM publicly reproducible by saved-posterior restoration; M3 scientific acceptance remains **IN PROGRESS**.
+**Foundation track:** M0 continues in progress; native Projects board and V2 source integration are not complete.
+
+## 2026-11-22 — M3 MMM publication review update
+
+- **Executed:** A regression benchmark and Google Meridian 2.2.0 exploratory MMM were run in Colab on 48 simulated markets × 120 pre-experiment weeks (5,760 geo-weeks), using Search, Social and Display. Two MCMC chains × 1,000 posterior draws were saved in NetCDF.
+- **Verified fast reproduction:** A clean Colab run fetched checksummed **public GitHub inputs**, restored the saved posterior without resampling, and regenerated the three Google Meridian HTML reports. All 12 code cells contained outputs and no execution errors were recorded. Evidence: [draft PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12), [portable notebook](../notebooks/02_Meridian_MMM_Portable.ipynb), and [M3 reproduction guide](M3_FAST_REPRODUCIBILITY.md).
+- **After-run change:** The notebook's input reference was pinned from a mutable branch name to immutable GitHub commit `5da3b61c19aeef8a722cc49eb617064ade990507`; hashes and the same input asset blobs can be checked independently, but **a fresh Colab rerun with the pinned URL has not yet been recorded**.
+- **Findings (exploratory):** National test R² ≈ 0.8803, test wMAPE ≈ 6.14%; Social mean modeled ROI ≈ 6.43×. The $396,900 historical fixed-budget scenario projects +$68,228 (+3.74%) modeled incremental revenue under Meridian's original default ±30% channel constraints.
+- **Scientific blockers:** Strict rank-normalized R-hat reaches ≈ 1.3781; full independent Bayesian refit, aligned synthetic counterfactual-truth comparison, and causal calibration are not complete. Prediction quality or official health score does **not** establish true channel incrementality. No simulated model output should be described as a live campaign result.
+- **Milestone state:** M3 **IN PROGRESS** (execution and fast restoration verified; all formal exit gates not met). M4 MTA, M5 independent geo-incrementality analysis, M6 triangulation remain separate planned efforts; M7 visibility may proceed on correctly labeled exploratory evidence.
+
+## Earlier foundation and synthetic-V2 audit (verified 2026-11-13)
+
 
 ## Verified completed / evidence
 - Public repository, canonical project charter, roadmap, collaboration instructions, GitHub Issues.
@@ -20,7 +33,7 @@ Last verified: 2026-11-13
 - **M0 historical V2 audit:** **COMPLETED** for archive recovery, saved and regenerated pilot QA, full multi-world validation, full-release byte reproduction. **Source integration into GitHub remains a separate M1 task** under [Issue #4](https://github.com/rahitushar1/marketing-measurement-lab/issues/4).
 - **Scientific limitations:** tests establish internal synthetic invariants, not real-market realism, model parameter recovery, lack of interference, or production deployment.
 - **ChatGPT UI Project instructions:** collaboration file read; UI application was not independently verified.
-- **MMM/MTA/experiment model results:** no model pipeline has been fitted and verified in this repository.
+- **MMM:** Exploratory fit and public-input fast restoration verified 2026-11-22 (see current update above). **MTA and independent geo-experiment estimates:** not yet verified.
 
 ## Milestone table
 | Milestone | State | Next gate |
@@ -28,13 +41,14 @@ Last verified: 2026-11-13
 | M0 Foundation + recovery | **In progress** | Historical audit complete; owner creates Projects board |
 | M1 Unified synthetic DGP | **Verified source candidate, not yet imported** | Commit source, tests, environment and reproducibility |
 | M2 QA automation | **Prior V2 QA verified, CI not implemented** | Review independent tests and establish CI |
-| M3 MMM | Planned | Reproducible model + diagnostics |
+| M3 MMM | **In progress — public fast restoration verified** | Resolve convergence, independent full refit, aligned synthetic truth evaluation |
 | M4 MTA | Planned | Reproducible attribution/bias study |
 | M5 Incrementality | Planned | Simulated geo inference and uncertainty |
 | M6 Triangulation | Planned | Aligned estimands and decision case |
-| M7 Publication + practitioner feedback | Plan complete, execution pending | First grounded publication after public source release |
+| M7 Publication + practitioner feedback | **In progress** | Merge reviewed M3 case study; publish evidence-based outreach; gather feedback |
 
 ## Priority queue
+0. **P0 MMM:** review and merge [draft M3 PR #12](https://github.com/rahitushar1/marketing-measurement-lab/pull/12) after documentation and input-ref QA; retain scientific issues in [#6](https://github.com/rahitushar1/marketing-measurement-lab/issues/6).
 1. **P0 Technical:** prepare reviewed [M1 V2 source import #4](https://github.com/rahitushar1/marketing-measurement-lab/issues/4); historical reproduction verified, do not rebuild blindly.
 2. **P1 Project management:** owner creates [native Projects board #3](https://github.com/rahitushar1/marketing-measurement-lab/issues/3); link verified board URL and import issues.
 3. **P1 Technical:** establish [M2 independent QA/CI #5](https://github.com/rahitushar1/marketing-measurement-lab/issues/5) after source import.
