@@ -69,7 +69,7 @@ The major lesson is to separate **model fit**, **convergence**, **causal identif
 - [Versioned model artifact and file hash manifest](../artifacts/mmm/manifest.json)
 - [Observable weekly input dataset](../mmm_geo_weekly.csv) and [synthetic release configuration](../release.json)
 
-**Reproduction disclosure (2026-11-22):** A clean public-input Colab run successfully downloaded and checksum-verified three public inputs, restored the 2 × 1,000 saved posterior and generated all three HTML reports, with 12/12 executed code cells and no error outputs. The notebook was subsequently pinned to the exact data/model input commit; that final URL change needs a brief rerun before calling the pinned version tested. The committed HTML reports were generated from the earlier exploratory fit; readers can regenerate their own reports using the notebook. This fast run is **not an independent full model refit**.
+**Reproduction disclosure (2026-11-22):** A clean public-input Colab run successfully downloaded and checksum-verified three public inputs, restored the 2 × 1,000 saved posterior and generated all three HTML reports, with 12/12 executed code cells and no error outputs. The notebook was subsequently pinned to the exact data/model input commit; the owner subsequently reported a successful Colab run with the pinned URL, although no separately saved post-pin execution artifact has been reviewed. The committed HTML reports were generated from the earlier exploratory fit; readers can regenerate their own reports using the notebook. This fast run is **not an independent full model refit**.
 
 ## Next in the complete Marketing Measurement Lab
 
